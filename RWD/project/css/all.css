@@ -602,3 +602,13 @@ margin-left: 295px;
 	}
 
 }
+
+.animation{
+	opacity: 0;
+	transform: translateY(50px);
+}
+.rollIn{
+	opacity: 1;
+	transition: all 1.5s;
+	transform: translateY(0);
+}

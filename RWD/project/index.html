@@ -41,8 +41,8 @@
 		</div>
 
 	</div>
-	<div class="introduction">
-		<div class="wrap ">
+	<div class="introduction ">
+		<div class="wrap animation">
 			<h2>客人總是在詢問<br>這麼好吃的秘訣是什麼</h2>
 			<ul>
 				<li>
@@ -70,7 +70,7 @@
 		<div class="wrap">
 			<div class="flex">
 				<div class="todaychef_img"></div>
-				<div class="todaychef_content">
+				<div class="todaychef_content animation">
 					<h2>今日主廚：帕金森、梅在帕</h2>
 					<h2>Tody Chef: Plum in Shock</h2>
 					<p>Mauris non tempor quam, et lacinia sapien. Mauris accumsan eros eget libero posuere vulputate. Etiam elit
@@ -86,7 +86,7 @@
 
 	</div>
 	<div class="impression">
-		<div class="wrap ">
+		<div class="wrap animation">
 			<h2>聽聽別人的感想</h2>
 			<ul class="flex">
 				<li>
@@ -117,7 +117,7 @@
 				<div class="map ">
 					<img src="img/Map.png">
 				</div>
-				<form >
+				<form>
 					<label>姓名</label>
 					<input class="form-control">
 					<label>電話</label>
@@ -181,6 +181,22 @@
 			e.preventDefault();
 			$('body').toggleClass('menu_show');
 		});
+
+		// DOM滑入效果
+		const slideInDOM = document.querySelectorAll('.animation')
+		let windowHight = window.innerHeight;
+		let scrollHight = document.documentElement.scrollTop;
+		document.addEventListener('scroll', slideIn);
+
+		function slideIn() {
+			scrollHight = document.documentElement.scrollTop;
+			slideInDOM.forEach(item => {
+				if (scrollHight + windowHight > (item.offsetTop)) {
+					item.classList.add('rollIn');
+				};
+			})
+		}
+
 	})
 </script>
 
